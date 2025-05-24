@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globomantics Fleet Analytics Dashboard</title>
+    
+    <!-- Attribution: Created by Tim Warner (TechTrainerTim.com), Principal Author at Pluralsight -->
+    <!-- These materials are part of Pluralsight training content - No warranty provided -->
+    
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../globomantics-asset-bundle/logos/globomantics-logo-white.png" alt="Globomantics">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="icon">📊</span>
+                    <span>Fleet Overview</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🤖</span>
+                    <span>Robots</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📈</span>
+                    <span>Performance</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🔧</span>
+                    <span>Maintenance</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚠️</span>
+                    <span>Alerts</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <h1>Fleet Analytics Dashboard</h1>
+                <div class="header-actions">
+                    <div class="date-filter">
+                        <select>
+                            <option>Last 24 Hours</option>
+                            <option selected>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+                    <button class="btn-export">Export Report</button>
+                    <div class="user-info">
+                        <span>Admin User</span>
+                        <div class="user-avatar">👤</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- KPI Cards -->
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon" style="background: var(--success-green);">🤖</div>
+                    <div class="kpi-content">
+                        <h3>Active Robots</h3>
+                        <div class="kpi-value">142</div>
+                        <div class="kpi-change positive">+5.2%</div>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon" style="background: var(--globo-blue);">⚡</div>
+                    <div class="kpi-content">
+                        <h3>Avg Efficiency</h3>
+                        <div class="kpi-value">94.2%</div>
+                        <div class="kpi-change positive">+2.3%</div>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon" style="background: var(--electric-purple);">📦</div>
+                    <div class="kpi-content">
+                        <h3>Tasks Completed</h3>
+                        <div class="kpi-value">45,678</div>
+                        <div class="kpi-change positive">+12.5%</div>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon" style="background: var(--innovation-orange);">⏱️</div>
+                    <div class="kpi-content">
+                        <h3>Uptime</h3>
+                        <div class="kpi-value">98.7%</div>
+                        <div class="kpi-change positive">+0.5%</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-grid">
+                <!-- Fleet Status Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Fleet Status Distribution</h3>
+                        <button class="btn-icon">⋮</button>
+                    </div>
+                    <canvas id="fleetStatusChart"></canvas>
+                </div>
+
+                <!-- Performance Trend Chart -->
+                <div class="chart-container large">
+                    <div class="chart-header">
+                        <h3>Performance Trend</h3>
+                        <button class="btn-icon">⋮</button>
+                    </div>
+                    <canvas id="performanceTrendChart"></canvas>
+                </div>
+
+                <!-- Robot Types Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Robots by Type</h3>
+                        <button class="btn-icon">⋮</button>
+                    </div>
+                    <canvas id="robotTypesChart"></canvas>
+                </div>
+
+                <!-- Maintenance Schedule -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Maintenance Schedule</h3>
+                        <button class="btn-icon">⋮</button>
+                    </div>
+                    <div class="maintenance-list">
+                        <div class="maintenance-item">
+                            <div class="robot-info">
+                                <span class="robot-name">Assembly Bot A1</span>
+                                <span class="robot-id">GLB-1000</span>
+                            </div>
+                            <div class="maintenance-date urgent">In 2 days</div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="robot-info">
+                                <span class="robot-name">Warehouse Bot W3</span>
+                                <span class="robot-id">GLB-2000</span>
+                            </div>
+                            <div class="maintenance-date">In 5 days</div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="robot-info">
+                                <span class="robot-name">Quality Inspector Q7</span>
+                                <span class="robot-id">GLB-3000</span>
+                            </div>
+                            <div class="maintenance-date">In 12 days</div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="robot-info">
+                                <span class="robot-name">Packaging Bot P2</span>
+                                <span class="robot-id">GLB-1500</span>
+                            </div>
+                            <div class="maintenance-date">In 18 days</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section class="alerts-section">
+                <h3>Recent Alerts</h3>
+                <div class="alerts-grid">
+                    <div class="alert-item warning">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h4>High Temperature Warning</h4>
+                            <p>Assembly Bot A1 operating at 38°C - above normal range</p>
+                            <span class="alert-time">15 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="alert-item info">
+                        <div class="alert-icon">ℹ️</div>
+                        <div class="alert-content">
+                            <h4>Software Update Available</h4>
+                            <p>RoboOS v4.2.2 ready for deployment to 23 robots</p>
+                            <span class="alert-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="alert-item success">
+                        <div class="alert-icon">✅</div>
+                        <div class="alert-content">
+                            <h4>Maintenance Completed</h4>
+                            <p>Logistics Bot L4 maintenance completed successfully</p>
+                            <span class="alert-time">5 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Feed -->
+            <section class="live-feed">
+                <h3>Live Activity Feed</h3>
+                <div class="feed-container">
+                    <div class="feed-item">
+                        <span class="feed-time">10:45:32</span>
+                        <span class="feed-robot">GLB-1000</span>
+                        <span class="feed-action">Completed welding task #4521</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="feed-time">10:45:28</span>
+                        <span class="feed-robot">GLB-2003</span>
+                        <span class="feed-action">Picked item from shelf A-23</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="feed-time">10:45:21</span>
+                        <span class="feed-robot">GLB-3001</span>
+                        <span class="feed-action">Quality check passed - Batch #789</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="feed-time">10:45:15</span>
+                        <span class="feed-robot">GLB-1002</span>
+                        <span class="feed-action">Started assembly sequence</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="feed-time">10:45:08</span>
+                        <span class="feed-robot">GLB-2001</span>
+                        <span class="feed-action">Navigation to charging station</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
