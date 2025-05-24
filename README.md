@@ -1,9 +1,21 @@
 # Globomantics Backstory
 
-Welcome, Pluralsight authors! 👋
+[![Pluralsight Author](https://img.shields.io/badge/Pluralsight-Author-orange?logo=pluralsight&style=flat-square)](https://www.pluralsight.com/authors/tim-warner)
 
-This repo is your one-stop shop for reusable course assets themed around the fictional **Globomantics Robotics** company.  
-It's designed to help you quickly add realistic context, visuals, and data to your own courses—no need to invent a fake company from scratch!
+Welcome! This repo is your one-stop shop for reusable course assets themed around the fictional **Globomantics Robotics** company.
+
+Whether you're a Pluralsight author, a tech trainer, or just someone who loves a good fake company, you'll find ready-to-use visuals, data, and code to enrich your technical education content.
+
+---
+
+## Special Note for Pluralsight Authors
+
+Looking to add realism and polish to your Pluralsight courses? These assets are designed for easy drop-in use—no need to invent a fake company or build mockups from scratch.
+
+**Check out Tim's GitHub-focused Pluralsight courses:**
+- [GitHub Copilot: Getting Started](https://app.pluralsight.com/library/courses/github-copilot-getting-started)
+- [GitHub Codespaces: Getting Started](https://app.pluralsight.com/library/courses/github-codespaces-getting-started)
+- [GitHub Actions: Getting Started](https://app.pluralsight.com/library/courses/github-actions-getting-started)
 
 ---
 
@@ -23,11 +35,14 @@ It's designed to help you quickly add realistic context, visuals, and data to yo
 
 ---
 
-## How Do I Use This?
+## How to Drop In Solutions
 
-1. **Browse the folders** for a scenario or asset you need (e.g., login screens, HR datasets, marketing visuals).
-2. **Copy or reference** the files directly in your own course repo.
-3. **Remix or extend**—feel free to add your own assets and submit a PR for others to use!
+1. **Browse the folders** for a scenario, asset, or solution you need (e.g., login screens, HR datasets, marketing visuals).
+2. **Copy the relevant files or folders** directly into your own course repo or project.
+3. **Update references** in your code or Markdown to point to the new local paths.
+4. **Remix or extend**—feel free to adapt assets and submit a PR to share improvements!
+
+*Tip: Each solution is designed to be as self-contained as possible for easy pluggability.*
 
 ---
 
@@ -35,7 +50,7 @@ It's designed to help you quickly add realistic context, visuals, and data to yo
 
 - **Save time:** No more inventing fake companies or assets for every course.
 - **Consistency:** Keep your demos and labs looking professional and cohesive.
-- **Collaboration:** Share improvements and new scenarios with fellow authors.
+- **Collaboration:** Share improvements and new scenarios with fellow authors and trainers.
 
 ---
 
