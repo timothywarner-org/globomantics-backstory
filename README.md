@@ -1,4 +1,6 @@
-# Globomantics Backstory
+# Globomantics Demo Assets
+
+> TODO: Change the name of the repo to **globomantics-demo-assets**
 
 [![Pluralsight Author](https://img.shields.io/badge/Pluralsight-Author-orange?logo=pluralsight&style=flat-square)](https://www.pluralsight.com/authors/tim-warner)
 

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog - Globomantics Robotics</title>
+    
+    <!-- Attribution: Created by Tim Warner (TechTrainerTim.com), Principal Author at Pluralsight -->
+    <!-- These materials are part of Pluralsight training content - No warranty provided -->
+    
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (Reuse from homepage) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../homepage/index.html" class="logo">
+                    <img src="../../globomantics-asset-bundle/logos/globomantics-logo-white.png" alt="Globomantics">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Products</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <h1>Our Product Catalog</h1>
+            <p>Discover the perfect robotics solution for your needs</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="industrial">Industrial</option>
+                        <option value="consumer">Consumer</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-10000">Under $10,000</option>
+                        <option value="10000-50000">$10,000 - $50,000</option>
+                        <option value="50000-100000">$50,000 - $100,000</option>
+                        <option value="100000+">$100,000+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortFilter">
+                        <option value="featured">Featured</option>
+                        <option value="name">Name (A-Z)</option>
+                        <option value="price-low">Price (Low to High)</option>
+                        <option value="price-high">Price (High to Low)</option>
+                    </select>
+                </div>
+                <button class="btn-filter" onclick="applyFilters()">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Industrial Robots -->
+                <div class="product-item" data-category="industrial" data-price="125000">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/robotics-image-1.jpg" alt="GLB-1000">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>GLB-1000 Heavy Duty</h3>
+                        <p class="product-category">Industrial Manufacturing</p>
+                        <p class="product-description">High-precision manufacturing robot with 6-axis movement and AI-powered quality control.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-weight"></i> 850kg payload</span>
+                            <span><i class="fas fa-ruler"></i> 3.2m reach</span>
+                            <span><i class="fas fa-tachometer-alt"></i> ±0.02mm accuracy</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$125,000</span>
+                            <button class="btn-primary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="industrial" data-price="89000">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/robotics-image-2.jpg" alt="SwarmLogix">
+                    </div>
+                    <div class="product-info">
+                        <h3>SwarmLogix Coordinator</h3>
+                        <p class="product-category">Warehouse Automation</p>
+                        <p class="product-description">Intelligent warehouse robot fleet management system with autonomous navigation.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-robot"></i> 50 robot capacity</span>
+                            <span><i class="fas fa-battery-full"></i> 16hr battery</span>
+                            <span><i class="fas fa-wifi"></i> 5G enabled</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$89,000</span>
+                            <button class="btn-primary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumer Robots -->
+                <div class="product-item" data-category="consumer" data-price="2499">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/home-image-1.jpg" alt="GLB-Home">
+                        <span class="product-badge new">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>GLB-Home Assistant Pro</h3>
+                        <p class="product-category">Smart Home</p>
+                        <p class="product-description">AI-powered home assistant with voice control, security monitoring, and task automation.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-microphone"></i> Voice control</span>
+                            <span><i class="fas fa-shield-alt"></i> Security mode</span>
+                            <span><i class="fas fa-mobile"></i> App control</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$2,499</span>
+                            <button class="btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Robots -->
+                <div class="product-item" data-category="healthcare" data-price="185000">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/robotics-image-3.jpg" alt="MediBot">
+                    </div>
+                    <div class="product-info">
+                        <h3>MediBot Surgical Assistant</h3>
+                        <p class="product-category">Healthcare</p>
+                        <p class="product-description">Precision surgical assistant with haptic feedback and real-time imaging integration.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-microscope"></i> Micro-precision</span>
+                            <span><i class="fas fa-heartbeat"></i> Vital monitoring</span>
+                            <span><i class="fas fa-database"></i> EMR integration</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$185,000</span>
+                            <button class="btn-primary">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Robots -->
+                <div class="product-item" data-category="education" data-price="599">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/robotics-image-4.jpg" alt="EduBot">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>EduBot STEM Kit</h3>
+                        <p class="product-category">Education</p>
+                        <p class="product-description">Complete robotics learning kit with visual programming interface and curriculum.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-graduation-cap"></i> K-12 ready</span>
+                            <span><i class="fas fa-code"></i> Visual coding</span>
+                            <span><i class="fas fa-book"></i> Full curriculum</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$599</span>
+                            <button class="btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="healthcare" data-price="45000">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/robotics-image-5.jpg" alt="CareCompanion">
+                    </div>
+                    <div class="product-info">
+                        <h3>CareCompanion Elder Care</h3>
+                        <p class="product-category">Healthcare</p>
+                        <p class="product-description">Companion robot for elderly care with health monitoring and emergency response.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-user-md"></i> Health tracking</span>
+                            <span><i class="fas fa-phone"></i> Emergency call</span>
+                            <span><i class="fas fa-comments"></i> Conversation AI</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$45,000</span>
+                            <button class="btn-primary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="industrial" data-price="67000">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/media-image-4.jpg" alt="PrecisionArm">
+                    </div>
+                    <div class="product-info">
+                        <h3>PrecisionArm Pro</h3>
+                        <p class="product-category">Industrial Manufacturing</p>
+                        <p class="product-description">Ultra-precise robotic arm for electronics assembly and quality inspection.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-crosshairs"></i> 0.01mm precision</span>
+                            <span><i class="fas fa-eye"></i> Vision system</span>
+                            <span><i class="fas fa-cogs"></i> 7-axis movement</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$67,000</span>
+                            <button class="btn-primary">Request Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="consumer" data-price="1299">
+                    <div class="product-image">
+                        <img src="../../globomantics-asset-bundle/images/home-image-2.jpg" alt="CleanBot">
+                    </div>
+                    <div class="product-info">
+                        <h3>CleanBot Pro</h3>
+                        <p class="product-category">Smart Home</p>
+                        <p class="product-description">Advanced cleaning robot with HEPA filtration and smart room mapping.</p>
+                        <div class="product-specs">
+                            <span><i class="fas fa-map"></i> Smart mapping</span>
+                            <span><i class="fas fa-clock"></i> Scheduling</span>
+                            <span><i class="fas fa-broom"></i> Multi-surface</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$1,299</span>
+                            <button class="btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="product-cta">
+        <div class="container">
+            <h2>Need Help Choosing?</h2>
+            <p>Our robotics experts are here to help you find the perfect solution</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Talk to an Expert</button>
+                <button class="btn-secondary">Download Catalog</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Simplified) -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Globomantics Robotics. All rights reserved. | Created by Tim Warner (TechTrainerTim.com) for Pluralsight</p>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+</body>
+</html>

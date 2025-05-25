@@ -1,0 +1,98 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+/* ************* Element Styles ************* */
+
+body {
+  background-color: #F2F2F2;
+  padding: 20px;
+}
+
+a {
+  color: #2DC4B6;
+  font-size: 9pt;
+  text-decoration: none;
+}
+
+h1 {
+  background-color: #FF9F1C;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 32pt;
+  font-weight: 300;
+  margin: 0;
+  padding: 30px;
+  width: 100%;
+}
+
+p {
+  color: #888888;
+  font-size: 9pt;
+  font-weight: 200;
+  margin-top: 20px;
+  text-align: center;
+}
+
+label {
+  color: #223347;
+  display: block;
+  font-size: 12pt;
+  margin: 15px 0 5px 0;
+}
+
+input {
+  display: block;
+  font-size: 12pt;
+  width: 50%;
+}
+
+input[type=text], input[type=password] {
+  border: 1px solid #BEBEBE;
+  box-sizing: border-box;
+  color: #223347;
+  padding: 15px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+input[type=text]:focus {
+  outline: none;
+}
+
+input[type=password]:focus {
+  outline: none;
+}
+
+input[type=submit] {
+  background-color: #2DC4B6;
+  border: none;
+  color: #FFFFFF;
+  padding: 15px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  background-color: #2DAAB6;
+}
+
+/* ************* Class Styles ************* */
+
+.container {
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  text-align: center;
+  width: 360px;
+}
+
+.form {
+  display: block;
+  margin: 40px auto 0 auto;
+  text-align: left;
+  width: 80%;
+}
